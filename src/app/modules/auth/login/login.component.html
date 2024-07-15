@@ -1,0 +1,31 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ccc;
+  "
+>
+  <mat-card style="max-width: 400px">
+    <mat-card-header><h1>Iniciar Sesión</h1></mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="w-100 mb-3" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Correo Electrónico" />
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>Debe ser un correo válido</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Rol</mat-label>
+          <mat-select placeholder="Rol">
+            <mat-option value="1">Administrador</mat-option>
+            <mat-option value="2">Docente</mat-option>
+            <mat-option value="3">Estudiante</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
