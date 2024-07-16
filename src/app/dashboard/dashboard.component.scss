@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.sidenav-content {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 0;
+  background-color: #253659;
+  color: white;
+}
+
+.dashboard {
+  background-color: white;
+}
+
+.toolbar {
+  background-color: #e30712;
+  color: white;
+}

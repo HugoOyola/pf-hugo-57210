@@ -1,0 +1,53 @@
+<mat-drawer-container class="container dashboard" autosize>
+  <mat-drawer [opened]="true" #drawer class="sidenav" mode="side">
+    <h3 style="text-align: center">Menú Principal</h3>
+    <mat-nav-list style="color: white">
+      <a mat-list-item (click)="main = 'start'" style="color: white"
+        ><mat-icon style="color: white">home</mat-icon>
+        <span style="color: white">&nbsp;Inicio</span></a
+      >
+      <a mat-list-item (click)="main = 'courses'"
+        ><mat-icon style="color: white">pages</mat-icon
+        ><span style="color: white">&nbsp;Cursos</span></a
+      >
+      <a mat-list-item (click)="main = 'students'"
+        ><mat-icon style="color: white">group_users</mat-icon>
+        <span style="color: white">&nbsp;Alumnos</span></a
+      >
+      <a mat-list-item (click)="main = 'subscriptions'"
+        ><mat-icon style="color: white">edit_calendar</mat-icon>
+        <span style="color: white">&nbsp;Matriculas</span></a
+      >
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <mat-toolbar class="toolbar">
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="icon"
+        aria-label="Example icon-button with menu icon"
+        matTooltip="Menú"
+      >
+        <mat-icon style="color: white">menu</mat-icon>
+      </button>
+      <span chaTitle [ngSwitch]="main">
+        <span *ngSwitchCase="'start'">Dashboard</span>
+        <span *ngSwitchCase="'courses'">Listado de cursos</span>
+        <span *ngSwitchCase="'students'">Listado de alumnos</span>
+        <span *ngSwitchCase="'subscriptions'">Inscripciones</span>
+      </span>
+    </mat-toolbar>
+
+    <main [ngSwitch]="main" class="p-5">
+      <div *ngSwitchCase="'start'">
+        <h1>Bienvenido al Sistema</h1>
+        <p>Debe seleccionar una opción del Menú Principal</p>
+      </div>
+      <app-courses *ngSwitchCase="'courses'"></app-courses>
+      <app-students *ngSwitchCase="'students'"></app-students>
+      <p *ngSwitchCase="'subscriptions'">Modulo no implementado</p>
+    </main>
+  </div>
+</mat-drawer-container>
